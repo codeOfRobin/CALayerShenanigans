@@ -9,7 +9,13 @@
 import UIKit
 
 class ClockFace: CAShapeLayer {
-    var time = Date()
+    var time = Date() {
+        didSet {
+            let components = Calendar.current.dateComponents(Set([.hour, .minute]), from: time)
+            self.hourHand.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(components.hour ?? 0) / 12.0 * 2.0 * CGFloat.pi))
+            self.minuteHand.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(components.minute ?? 0) / 60.0 * 2.0 * CGFloat.pi))
+        }
+    }
 
     let hourHand = CAShapeLayer()
     let minuteHand = CAShapeLayer()
@@ -31,6 +37,7 @@ class ClockFace: CAShapeLayer {
         self.minuteHand.fillColor = UIColor.black.cgColor
         self.minuteHand.position = CGPoint(x: self.bounds.width/2, y: self.bounds.height/2.0)
         self.addSublayer(self.minuteHand)
+        self.time = Date()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -49,7 +56,12 @@ class ViewController: UIViewController {
         self.view.layer.addSublayer(self.clockFace)
 
         self.view.addSubview(datePicker)
+        self.datePicker.addTarget(self, action: #selector(setTime), for: .valueChanged)
         // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    @objc func setTime() {
+        self.clockFace.time = self.datePicker.date
     }
 
     override func viewDidLayoutSubviews() {
@@ -57,7 +69,7 @@ class ViewController: UIViewController {
 
         self.clockFace.position = CGPoint(x: self.view.bounds.size.width/2, y: 150)
 
-        self.datePicker.frame = CGRect.init(x: 0, y: 200, width: view.bounds.width, height: 150)
+        self.datePicker.frame = CGRect.init(x: 0, y: 300, width: view.bounds.width, height: 150)
     }
 
 }
