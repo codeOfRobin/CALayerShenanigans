@@ -45,10 +45,32 @@ class ClockFace: CAShapeLayer {
     }
 }
 
+class CoreAnimationClockFace: CAShapeLayer {
+    var time = Date() {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+
+    override func display() {
+        super.display()
+        print("\(time)")
+    }
+
+    override init() {
+        super.init()
+        self.bounds = CGRect(x: 0, y: 0, width: 200, height: 200)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 class ViewController: UIViewController {
 
     let datePicker = UIDatePicker()
-    let clockFace = ClockFace()
+    let clockFace = CoreAnimationClockFace()
 
     override func viewDidLoad() {
         super.viewDidLoad()
