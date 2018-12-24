@@ -13,6 +13,7 @@
 		42C33A3221CE61DC009DF932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42C33A3121CE61DC009DF932 /* Assets.xcassets */; };
 		42C33A3521CE61DC009DF932 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C33A3321CE61DC009DF932 /* LaunchScreen.storyboard */; };
 		42C33A4021CE61DC009DF932 /* CALayerShenanigansTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C33A3F21CE61DC009DF932 /* CALayerShenanigansTests.swift */; };
+		42F038D721D162D400429B2B /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F038D621D162D400429B2B /* HamburgerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		42C33A3B21CE61DC009DF932 /* CALayerShenanigansTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CALayerShenanigansTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C33A3F21CE61DC009DF932 /* CALayerShenanigansTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerShenanigansTests.swift; sourceTree = "<group>"; };
 		42C33A4121CE61DC009DF932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42F038D621D162D400429B2B /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				42C33A2A21CE61DA009DF932 /* AppDelegate.swift */,
 				42C33A2C21CE61DA009DF932 /* ViewController.swift */,
+				42F038D621D162D400429B2B /* HamburgerViewController.swift */,
 				42C33A2E21CE61DA009DF932 /* Main.storyboard */,
 				42C33A3121CE61DC009DF932 /* Assets.xcassets */,
 				42C33A3321CE61DC009DF932 /* LaunchScreen.storyboard */,
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F038D721D162D400429B2B /* HamburgerViewController.swift in Sources */,
 				42C33A2D21CE61DA009DF932 /* ViewController.swift in Sources */,
 				42C33A2B21CE61DA009DF932 /* AppDelegate.swift in Sources */,
 			);
